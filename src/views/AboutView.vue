@@ -10,10 +10,12 @@
   </div>
 </template>
 <script>
+import mainOidc from "@/oidc";
+
 export default {
   computed: {
     user() {
-      return { ...this.$oidc.userProfile, accessToken: this.$oidc.accessToken }
+      return { ...mainOidc.userProfile, accessToken: mainOidc.accessToken }
     },
     claims() {
       if (this.user) {

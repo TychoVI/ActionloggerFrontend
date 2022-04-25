@@ -15,6 +15,7 @@
 <script>
 import Action from "@/components/Action.vue";
 import {getActions} from "@/api/actions.ts";
+import mainOidc from "@/oidc";
 export default {
   components: {Action},
   data() {
@@ -29,7 +30,7 @@ export default {
   methods:{
     async fetchData(){
       this.loading = true;
-      await getActions(this.$oidc.accessToken).then(response => this.actions = response);
+      await getActions(mainOidc.accessToken).then(response => this.actions = response);
       this.loading = false;
     }
   }
