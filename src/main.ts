@@ -3,10 +3,14 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import mainOidc from "@/oidc";
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+mainOidc.startup().then(ok => {
+    if (ok) {
+        const app = createApp(App).use(router).use(createPinia())
+        app.config.globalProperties.$oidc = mainOidc;
+        app.mount('#app')
+    } else {
+        console.log('Something went wrong with oidc init')
+    }
+});

@@ -29,7 +29,7 @@ export default {
   methods:{
     async fetchData(){
       this.loading = true;
-      await getActions().then(response => this.actions = response);
+      await getActions(this.$oidc.accessToken).then(response => this.actions = response);
       this.loading = false;
     }
   }

@@ -10,9 +10,11 @@ import HelloWorld from '@/components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/actions">Actions</RouterLink>
+        <a href="#" @click="$oidc.signIn()">SignIn</a>
+        <a href="#" @click="$oidc.signOut()">SignOut</a>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <router-view />
 </template>
