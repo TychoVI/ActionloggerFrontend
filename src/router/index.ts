@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ActionView from '../views/ActionView.vue'
+import MeetingListView from '../views/MeetingListView.vue'
 import mainOidc from "@/oidc";
 
 const router = createRouter({
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/actions',
       name: 'actions',
       component: ActionView
+    },
+    {
+      path: '/meetings',
+      name: 'meetings',
+      component: MeetingListView
     }
   ]
 });

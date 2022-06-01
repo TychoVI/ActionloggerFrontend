@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Action from "@/components/Action.vue";
+import Action from "./Action.vue";
 import {getActions} from "@/api/actions.ts";
 import mainOidc from "@/oidc";
 export default {

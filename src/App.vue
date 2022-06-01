@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import mainOidc from "@/oidc";
 import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
+import * as Bootstrap from 'bootstrap'
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import "bootstrap"
                 <a class="nav-link"><RouterLink to="/about">About</RouterLink></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"><RouterLink to="/actions">Actions</RouterLink></a>
+                <a class="nav-link"><RouterLink to="/meetings">Meetings</RouterLink></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" v-if="mainOidc.isAuthenticated"  href="#" @click="mainOidc.signOut()">SignOut</a>

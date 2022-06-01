@@ -1,5 +1,5 @@
 <script>
-import ActionList from "@/components/ActionList.vue";
+import ActionList from "@/components/action/ActionList.vue";
 
 export default {
   components: {
