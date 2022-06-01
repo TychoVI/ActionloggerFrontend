@@ -5,7 +5,7 @@ export async function getActions(accessToken: string): Promise<Action[]> {
     let authHeader = "Bearer " + accessToken;
 
     return await axios
-        .get(import.meta.env.VITE_API_URL + '/Action', { headers: {"Authorization": authHeader}})
+        .get(import.meta.env.VITE_APP_URL + '/Action', { headers: {"Authorization": authHeader}})
         .then((res) => res.data)
         .catch(console.log)
 }
